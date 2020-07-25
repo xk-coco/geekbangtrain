@@ -1,5 +1,10 @@
 import scrapy
-from bs4 import BeautifulSoup as bs4
+from bs4 import BeautifulSoup as bfs
+import sys
+
+sys.path.append("D:\\user\\pys\\geekbangtrain\\")
+print("current path:")
+print(sys.path)
 from spider1.doubanspider.items import DoubanspiderItem
 
 
@@ -17,7 +22,8 @@ class DoubanSpider(scrapy.Spider):
     def start_requests(self):
         for i in range(0, 10):
             url = f'{self.start_urls[0]}?start={i * 25}'
-            yield scrapy.Request(url=url, callback=self.parse)
+            # yield scrapy.Request(url=url, callback=self.parse)
+            yield scrapy.Request(url=url, callback=self.parse2)
             # url 请求访问的网址
             # callback 回调函数，引擎会将下载好的页面(Response对象)发给该方法，执行数据解析
             # 这里可以使用callback指定新的函数，不是用parse作为默认的回调参数
@@ -25,8 +31,8 @@ class DoubanSpider(scrapy.Spider):
     # 解析函数，callback回调函数会调用
     def parse(self, response):
         items = []
-        soup = bs4(response.text, 'html.parser')
-        title_list = soup.find_all('div', attrs={'class': 'id'})
+        soup = bfs(response.text, 'html.parser')
+        title_list = soup.find_all('div', attrs={'class': 'hd'})
         for i in title_list:
             # 在items.py定义
             item = DoubanspiderItem()
@@ -36,3 +42,21 @@ class DoubanSpider(scrapy.Spider):
             item['link'] = link
             items.append(item)
         return items
+
+    # 解析函数，callback回调函数会调用
+    def parse2(self, response):
+        soup = bfs(response.text, 'html.parser')
+        title_list = soup.find_all('div', attrs={'class': 'hd'})
+        for i in title_list:
+            # 在items.py定义
+            item = DoubanspiderItem()
+            title = i.find('a').find('span').text
+            link = i.find('a'.find('href'))
+            item['title'] = title
+            item['link'] = link
+            yield scrapy.Request(url=link,meta={'item':item},callback=self.parse3)
+
+    # 解析具体页面
+    def parse3(self,response):
+        item = response.meta['item']
+        soup = bfs.
