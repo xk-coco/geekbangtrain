@@ -1,0 +1,2 @@
+current path:
+['D:\\user\\pys\\geekbangtrain\\venv\\Scripts\\scrapy.exe', 'D:\\Program Files\\Python37\\python37.zip', 'D:\\Program Files\\Python37\\DLLs', 'D:\\Program Files\\Python37\\lib', 'D:\\Program Files\\Python37', 'd:\\user\\pys\\geekbangtrain\\venv', 'd:\\user\\pys\\geekbangtrain\\venv\\lib\\site-packages', 'd:\\user\\pys\\geekbangtrain\\venv\\lib\\site-packages\\setuptools-40.8.0-py3.7.egg', 'd:\\user\\pys\\geekbangtrain\\venv\\lib\\site-packages\\pip-19.0.3-py3.7.egg', 'D:\\user\\pys\\geekbangtrain\\spider1', 'D:\\user\\pys\\geekbangtrain\\']

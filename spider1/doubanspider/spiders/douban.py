@@ -51,12 +51,15 @@ class DoubanSpider(scrapy.Spider):
             # 在items.py定义
             item = DoubanspiderItem()
             title = i.find('a').find('span').text
-            link = i.find('a'.find('href'))
+            link = i.find('a').get('href')
             item['title'] = title
             item['link'] = link
-            yield scrapy.Request(url=link,meta={'item':item},callback=self.parse3)
+            yield scrapy.Request(url=link, meta={'item': item}, callback=self.parse3)
 
     # 解析具体页面
-    def parse3(self,response):
+    def parse3(self, response):
         item = response.meta['item']
-        soup = bfs.
+        soup = bfs(response.text, 'html.parser')
+        content = soup.find('div', attrs={'class': 'related-info'}).get_text().strip()
+        item['content'] = content
+        yield item
