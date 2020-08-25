@@ -26,3 +26,5 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ Pillow --trusted-host htt
 
 pip install -i https://mirrors.aliyun.com/pypi/simple/ pytesseract --trusted-host https://mirrors.aliyun.com/pypi/simple/
 
+
+pip install -i https://mirrors.aliyun.com/pypi/simple/ twisted --trusted-host https://mirrors.aliyun.com/pypi/simple/
