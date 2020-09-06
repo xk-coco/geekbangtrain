@@ -28,3 +28,13 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ pytesseract --trusted-hos
 
 
 pip install -i https://mirrors.aliyun.com/pypi/simple/ twisted --trusted-host https://mirrors.aliyun.com/pypi/simple/
+
+
+pip install -i https://mirrors.aliyun.com/pypi/simple/ sklearn-pandas --trusted-host https://mirrors.aliyun.com/pypi/simple/
+pip install -i https://mirrors.aliyun.com/pypi/simple/ matplotlib --trusted-host https://mirrors.aliyun.com/pypi/simple/
+pip install -i https://mirrors.aliyun.com/pypi/simple/ xlrd --trusted-host https://mirrors.aliyun.com/pypi/simple/
+pip install -i https://mirrors.aliyun.com/pypi/simple/ seaborn --trusted-host https://mirrors.aliyun.com/pypi/simple/
+pip install -i https://mirrors.aliyun.com/pypi/simple/ jieba --trusted-host https://mirrors.aliyun.com/pypi/simple/
+pip install -i https://mirrors.aliyun.com/pypi/simple/ snownlp --trusted-host https://mirrors.aliyun.com/pypi/simple/
+
+
