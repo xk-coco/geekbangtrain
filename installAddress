@@ -37,4 +37,8 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ seaborn --trusted-host ht
 pip install -i https://mirrors.aliyun.com/pypi/simple/ jieba --trusted-host https://mirrors.aliyun.com/pypi/simple/
 pip install -i https://mirrors.aliyun.com/pypi/simple/ snownlp --trusted-host https://mirrors.aliyun.com/pypi/simple/
 
+pip install -i https://mirrors.aliyun.com/pypi/simple/ django==2.2.13 --trusted-host https://mirrors.aliyun.com/pypi/simple/
+
+pip install -i https://mirrors.aliyun.com/pypi/simple/ mysqlclient --trusted-host https://mirrors.aliyun.com/pypi/simple/
+
 
